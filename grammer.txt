@@ -1,0 +1,131 @@
+local a = 1
+
+if a+3==4 then
+	print("정답")
+else
+	print("오답")
+end
+
+
+
+
+local a = 0
+
+while a<5 do
+	a=a+1
+	if a==4 then
+		print(a)
+	end
+end
+
+
+
+
+
+local part = game.Workspace.Part
+
+while true do
+	
+	part.BrickColor=BrickColor.new("Really red")
+	wait(1)
+	part.BrickColor=BrickColor.new("Really blue")
+	wait(1)
+	part.BrickColor=BrickColor.new("Br. yellowish orange")
+	wait(1)
+end
+
+
+
+
+
+
+for count = 10, 0, -1 do
+	print(count)
+	wait(0.5)
+end
+
+
+
+
+
+
+				가로등 불빛 조절
+local light = game.Workspace.Part1.PointLight 
+
+local red = Color3.fromRGB(255,0,0)
+local green = Color3.fromRGB(0, 255, 0)
+
+while true do 
+
+	for count = 0, 5, 1 do
+		light.Color=red
+		light.Brightness = count  
+		wait(0.2)
+	end
+
+	for count = 5, 0, -1 do
+		light.Color=green
+		light.Brightness = count     
+		wait(0.2)
+	end
+end
+
+
+
+
+
+
+
+				함수와 랜덤
+local platform = script.Parent
+
+local function disappear()
+	platform.CanCollide = false
+	platform.Transparency = 1
+end
+
+local function appear()
+	platform.CanCollide = true
+	platform.Transparency = 0
+end
+
+while true do
+	platform.BrickColor=BrickColor.Random()		-- random color
+	disappear()
+	wait(2)
+	platform.BrickColor=BrickColor.Random()
+	appear()
+	wait(2)
+end
+
+
+
+
+
+				배열
+local arr = {10,20,30}
+
+print(arr[1])
+print(arr[2])
+print(arr[3])
+
+for k,v in ipairs(arr) do
+	print(k,v)
+end
+
+for k=1, #arr do		-- #arr : 배열의 길이.
+	print(k,arr[k])
+end
+
+
+
+
+
+			: 사용
+local House = {game.Workspace.Part,game.Workspace.Part2, game.Workspace.Part3,
+	game.Workspace.Part4, game.Workspace.Part5,}
+
+for i, v in ipairs(House) do
+	wait(3)
+	v:Destroy()	-- v.Destroy() 라고 생각.
+end
